@@ -1,2 +1,3 @@
 # leave_only_footprints
-Overwrite reddit comments
+
+Script for overwriting a list of comments belonging to user.
