@@ -18,13 +18,7 @@ def fill_comment(str_in):
 
 def main():
     string = (
-        "On 2023-07-01 Reddit maliciously attacked its own user base by changing "
-        + "how its API was accessed, thereby pricing genuinely useful and highly "
-        + "valuable third-party apps out of existence.  \nIn protest, this "
-        + "comment has been overwritten with this message - because “deleted” "
-        + "comments can be restored - such that Reddit can no longer profit from "
-        + "this free, user-contributed content.  \nI apologize for this "
-        + "inconvenience.  \n"
+        "placeholder string"
     )
     comment_string = fill_comment(string)  # pads string used for overwriting comments
     str_list = ["[deleted]", "[removed]"]  # don't overwrite these comments
@@ -43,8 +37,8 @@ def main():
     for line in f:
         id_list.append(line.strip())
     f.close()
-    index = 600
-    number = 101
+    index = 600 # start at list item 600
+    number = 101 # limit actions to 101 items
     id_list = id_list[index - 1 :]
     count = index - 1
     for id in id_list:
