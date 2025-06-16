@@ -1,6 +1,6 @@
-import praw  # Reddit's API wrapper, for the bot itself
 import time
 import os
+import praw  # Reddit's API wrapper, for the bot itself
 
 
 def fill_comment(str_in):
@@ -64,4 +64,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # main()
+    main()
