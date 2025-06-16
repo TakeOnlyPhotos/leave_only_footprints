@@ -3,9 +3,9 @@ import os
 import praw  # Reddit's API wrapper, for the bot itself
 
 
-def fill_comment(str_in):
+def fill_comment(str_in):  # pads length of string by repeating string
     # print(f"check length A:  {len(str_in)}") # vestigal line used in testing
-    target_length = 10000  # limit length
+    target_length = 10000  # limit of comment length
     times = target_length // len(str_in)
     # print(f"times:  {times}")                # vestigal line used in testing
     str_in = str_in * times
@@ -21,7 +21,7 @@ def main():
         "placeholder string"
     )
     comment_string = fill_comment(string)  # pads string used for overwriting comments
-    str_list = ["[deleted]", "[removed]"]  # don't overwrite these comments
+    str_list = ["[deleted]", "[removed]"]  # avoid overwrite these comments
     reddit = praw.Reddit(     # python wrapper for reddit
         client_id="[dummy value]",
         client_secret="[dummy value]",
