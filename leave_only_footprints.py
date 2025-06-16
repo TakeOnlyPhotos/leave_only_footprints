@@ -5,7 +5,7 @@ import praw  # Reddit's API wrapper, for the bot itself
 
 def fill_comment(str_in):
     # print(f"check length A:  {len(str_in)}") # vestigal line used in testing
-    target_length = 10000
+    target_length = 10000  # limit length
     times = target_length // len(str_in)
     # print(f"times:  {times}")                # vestigal line used in testing
     str_in = str_in * times
