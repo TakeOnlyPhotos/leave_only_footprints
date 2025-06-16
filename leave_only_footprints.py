@@ -21,25 +21,29 @@ def main():
         "placeholder string"
     )
     comment_string = fill_comment(string)  # pads string used for overwriting comments
-    str_list = ["[deleted]", "[removed]"]  # avoid overwrite these comments
+    str_list = ["[deleted]", "[removed]"]  # avoid overwriting deleted or removed comments
     reddit = praw.Reddit(     # python wrapper for reddit
-        client_id="[dummy value]",
-        client_secret="[dummy value]",
-        password="[password here]",
-        user_agent="[dummy val]",
-        username="[username here]",
+        client_id=     "dummy string", # replace dummy strings with desired values
+        client_secret= "dummy string",
+        password=      "dummy string",
+        user_agent=    "dummy string",
+        username=      "dummy string",
     )
     reddit.validate_on_submit = True
     print("")
     print("")
     id_list = []
-    f = open("comments.txt", "r")
+    f = open("comments.txt", "r") # file containing comment IDs to be edited
+    """
+    The file comments.txt should contain a list of comment IDs, one per line.
+    IDs can be obtained from Reddit data request file "comments.csv".
+    """
     for line in f:
         id_list.append(line.strip())
     f.close()
-    index = 600 # start at list item 600
-    number = 101 # limit actions to 101 items
-    id_list = id_list[index - 1 :]
+    index = 0 # list index to start at
+    number = 101 # number of comment_IDs to process
+    id_list = id_list[index - 1 :] # slice list to start at index
     count = index - 1
     for id in id_list:
         count += 1
